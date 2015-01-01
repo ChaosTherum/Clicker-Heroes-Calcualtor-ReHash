@@ -4,8 +4,8 @@ table of contents](TOC.md)
 # Extend and customise HTML5 Boilerplate
 
 Here is some useful advice for how you can make your project with HTML5
-Boilerplate even better. We don't want to include it all by default, as
-not everything fits with everyone's needs.
+Boilerplate even better. We don't want to include it all by default, as not
+everything fits with everyone's needs.
 
 
 * [App Stores](#app-stores)
@@ -24,25 +24,25 @@ not everything fits with everyone's needs.
 
 ### Install a Chrome Web Store app
 
-Users can install a Chrome app directly from your website, as long as
-the app and site have been associated via Google's Webmaster Tools.
-Read more on [Chrome Web Store's Inline Installation
+Users can install a Chrome app directly from your website, as long as the app
+and site have been associated via Google's Webmaster Tools. Read more on
+[Chrome Web Store's Inline Installation
 docs](https://developer.chrome.com/webstore/inline_installation).
 
 ```html
 <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/APP_ID">
 ```
 
-### Smart App Banners in iOS 6+ Safari
+### Smart App Banners in iOS 6 Safari
 
-Stop bothering everyone with gross modals advertising your entry in the
-App Store. Include the following [meta tag](https://developer.apple.com/library/IOS/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html#//apple_ref/doc/uid/TP40002051-CH6-SW2)
-will unintrusively allow the user the option to download your iOS app,
-or open it with some data about the user's current state on the website.
+Stop bothering everyone with gross modals advertising your entry in the App Store.
+This bit of code will unintrusively allow the user the option to download your iOS
+app, or open it with some data about the user's current state on the website.
 
 ```html
 <meta name="apple-itunes-app" content="app-id=APP_ID,app-argument=SOME_TEXT">
 ```
+
 
 ## DNS prefetching
 
@@ -117,10 +117,16 @@ Microsoft Ajax Content Delivery Network:
 <link rel="dns-prefetch" href="//ajax.aspnetcdn.com">
 ```
 
+### Browser support for DNS prefetching
+
+Chrome, Firefox 3.5+, Safari 5+, Opera (Unknown), IE 9 (called "Pre-resolution"
+on blogs.msdn.com)
+
 ### Further reading about DNS prefetching
 
 * https://developer.mozilla.org/en-US/docs/Controlling_DNS_prefetching
-* https://dev.chromium.org/developers/design-documents/dns-prefetching
+* http://dev.chromium.org/developers/design-documents/dns-prefetching
+* http://www.apple.com/safari/whats-new.html
 * http://blogs.msdn.com/b/ie/archive/2011/03/17/internet-explorer-9-network-performance-improvements.aspx
 * http://dayofjs.com/videos/22158462/web-browsers_alex-russel
 
@@ -130,11 +136,11 @@ Microsoft Ajax Content Delivery Network:
 ### More tracking settings
 
 The [optimized Google Universal Analytics
-snippet](https://mathiasbynens.be/notes/async-analytics-snippet#universal-analytics)
+snippet](http://mathiasbynens.be/notes/async-analytics-snippet#universal-analytics)
 included with HTML5 Boilerplate includes something like this:
 
 ```js
-ga('create', 'UA-XXXXX-X', 'auto'); ga('send', 'pageview');
+ga('create','UA-XXXXX-X'); ga('send','pageview');
 ```
 
 To customize further, see Google's [Advanced
@@ -146,14 +152,14 @@ and [Event](https://developers.google.com/analytics/devguides/collection/analyti
 
 In some countries, no personal data may be transferred outside jurisdictions
 that do not have similarly strict laws (i.e. from Germany to outside the EU).
-Thus a webmaster using the Google Universal Analytics may have to ensure that
+Thus a webmaster using the Google Univeral Analytics may have to ensure that
 no personal (trackable) data is transferred to the US. You can do that with
 [the `ga('set', 'anonymizeIp', true);`
 parameter](https://developers.google.com/analytics/devguides/collection/analyticsjs/advanced#anonymizeip)
-before sending any events/pageviews. In use it looks like this:
+before sending any events/pagviews. In use it looks like this:
 
 ```js
-ga('create', 'UA-XXXXX-X', 'auto');
+ga('create','UA-XXXXX-X');
 ga('set', 'anonymizeIp', true);
 ga('send', 'pageview');
 ```
@@ -356,12 +362,21 @@ value is boolean rather than a color. It's all or nothing.
 You can read about this useful element and more techniques in
 [Microsoft's documentation on adapting WebKit-oriented apps for IE10](http://blogs.windows.com/windows_phone/b/wpdev/archive/2012/11/15/adapting-your-webkit-optimized-site-for-internet-explorer-10.aspx).
 
+### Suppress IE6 image toolbar
+
+Kill IE6's pop-up-on-mouseover toolbar for images that can interfere with
+certain designs and be pretty distracting in general.
+
+```html
+<meta http-equiv="imagetoolbar" content="false">
+```
+
 
 ## Search
 
 ### Direct search spiders to your sitemap
 
-[Learn how to make a sitemap](http://www.sitemaps.org/protocol.html)
+[Learn how to make a sitemap](http://www.sitemaps.org/protocol.php)
 
 ```html
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
@@ -384,7 +399,7 @@ value your sanity. This is an HTML-centric way of achieving that.
 Sites with in-site search functionality should be strongly considered for a
 browser search plugin. A "search plugin" is an XML file which defines how your
 plugin behaves in the browser. [How to make a browser search
-plugin](https://www.google.com/search?ie=UTF-8&q=how+to+make+browser+search+plugin).
+plugin](http://www.google.com/search?ie=UTF-8&q=how+to+make+browser+search+plugin).
 
 ```html
 <link rel="search" title="" type="application/opensearchdescription+xml" href="">
@@ -393,7 +408,8 @@ plugin](https://www.google.com/search?ie=UTF-8&q=how+to+make+browser+search+plug
 
 ## Miscellaneous
 
-* Use [polyfills](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills).
+* Use [HTML5
+  polyfills](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills).
 
 * Use [Microformats](http://microformats.org/wiki/Main_Page) (via
   [microdata](http://microformats.org/wiki/microdata)) for optimum search
@@ -409,10 +425,6 @@ plugin](https://www.google.com/search?ie=UTF-8&q=how+to+make+browser+search+plug
   value="notranslate">`](https://support.google.com/translate/?hl=en#2641276).
   To disable translation for a particular section of the web page, add
   [`class="notranslate"`](https://support.google.com/translate/?hl=en#2641276).
-
-* If you want to disable the automatic detection and formatting of possible
-  phone numbers in Safari on iOS, use [`<meta name="format-detection"
-  content="telephone=no">`](https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html/#//apple_ref/doc/uid/TP40008193-SW5).
 
 * Avoid development/stage websites "leaking" into SERPs (search engine results
   page) by [implementing X-Robots-tag
@@ -453,9 +465,9 @@ attribute should contain the location of your pingback service.
 <link rel="pingback" href="">
 ```
 
-* High-level explanation: https://codex.wordpress.org/Introduction_to_Blogging#Pingbacks
+* High-level explanation: http://codex.wordpress.org/Introduction_to_Blogging#Pingbacks
 * Step-by-step example case: http://www.hixie.ch/specs/pingback/pingback-1.0#TOC5
-* PHP pingback service: https://web.archive.org/web/20131211032834/http://blog.perplexedlabs.com/2009/07/15/xmlrpc-pingbacks-using-php/
+* PHP pingback service: http://blog.perplexedlabs.com/2009/07/15/xmlrpc-pingbacks-using-php/
 
 
 
@@ -566,48 +578,54 @@ Home Screen icon. This works since iOS 6.
 <meta name="apple-mobile-web-app-title" content="">
 ```
 
+On iOS 7.1, you can minimize the top and bottom bars on the iPhone as the page
+loads, simply by adding the `minimal-ui` property to the `viewport` meta tag.
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+```
+
 For further information please read the [official
-documentation](https://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
+documentation](http://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
 on Apple's site.
 
 
 ### Apple Touch Icons
 
-The Apple touch icons can be seen as the favicons of iOS devices.
+Touch Icons can be seen as the favicons of mobile devices and tablets.
 
-The main sizes of the Apple touch icons are:
-
-* `57×57px` – iPhone with @1x display and iPod Touch
-* `72×72px` – iPad and iPad mini with @1x display running iOS ≤ 6
-* `76×76px` – iPad and iPad mini with @1x display running iOS ≥ 7
-* `114×114px` – iPhone with @2x display running iOS ≤ 6
-* `120×120px` – iPhone with @2x and @3x display running iOS ≥ 7
-* `144×144px` – iPad and iPad mini with @2x display running iOS ≤ 6
-* `152×152px` – iPad and iPad mini with @2x display running iOS 7
-* `180×180px` – iPad and iPad mini with @2x display running iOS 8
-
-Displays meaning:
-
-* @1x - non-Retina
-* @2x - Retina
-* @3x - Retina HD
-
-More information about the displays of iOS devices can be found
-[here](https://en.wikipedia.org/wiki/List_of_iOS_devices#Display).
-
-In most cases, one `180×180px` touch icon named `apple-touch-icon.png`
-and including:
+If your site or icons are in a sub-directory, you will need to reference the
+icons using `link` elements placed in the HTML `head` of your document, e.g.:
 
 ```html
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
 ```
 
-in the `<head>` of the page is enough. If you use art-direction and/or
-want to have different content for each device, you can add more touch
-icons as written above.
+The main sizes of the icons on iOS are:
+
+* `57×57px` – non-Retina iPhone and iPod Touch
+* `72×72px` – iPad mini and the first- and second-generation iPad on iOS ≤ 6
+* `76×76px` – iPad mini and the first- and second-generation iPad on iOS ≥ 7
+* `114×114px` – iPhone 4+ (with Retina Display) on iOS ≤ 6
+* `120×120px` – iPhone 4+ (with Retina Display) on iOS ≥ 7
+* `144×144px` – iPad 3+ (with Retina Display)
+* `152×152px` – iPad 3+ (with Retina Display)
+
+For non-Retina iPhone, iPod Touch, and Android 2.1+ devices you can use the
+example from above or replace the `apple-touch-icon-precomposed.png` within
+this project's root folder.
+
+In most cases, one `152×152px` touch icon named `apple-touch-icon-precomposed.png`
+is enough. If you use art-direction and want to have different content for each
+size, you can add more touch icons as written above.
+
+As of iOS 7, no special effects are applied to the touch icons. So, if you are
+only targeting iOS 7 and up, you don’t have to use `precomposed` anymore (but
+we [strongly recommend you
+do](http://mathiasbynens.be/notes/touch-icons#effects)!).
 
 For a more comprehensive overview, please refer to Mathias' [article on Touch
-Icons](https://mathiasbynens.be/notes/touch-icons).
+Icons](http://mathiasbynens.be/notes/touch-icons).
 
 
 ### Apple Touch Startup Image
@@ -641,5 +659,9 @@ which tries to be a more generic replacement to Apple's proprietary meta tag:
 Same applies to the touch icons:
 
 ```html
-<link rel="icon" sizes="192x192" href="highres-icon.png">
+<link rel="icon" sizes="196x196" href="highres-icon.png">
 ```
+
+
+*Many thanks to [Brian Blakely](https://github.com/brianblakely) for
+contributing much of this information.*
